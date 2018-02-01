@@ -42,39 +42,29 @@
       <ion-content padding="true">
           <div ng-controller="MyPing">
               <form name="myForm">
-                <label for="repeatSelect"> Repeat select: </label>
-                <select name="repeatSelect" id="repeatSelect" ng-model="data.model">
+                <label for="repeatSelect"> 選擇站台 : </label>
+                <select name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="Preference(data.model)">
                   <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
                 </select>
               </form>
-              <hr>
-              <tt>model = {{data.model}}</tt><br/>
-            </div>
         <div class="card">
             <div class="item item-text-wrap">
                 <h1>Network : {{network}}</h1>
+                <ion-toggle ng-model="isOnline" ng-checked="item.checked">
+                  </ion-toggle>
             </div>
         </div>
         <div class="card">
-            <div class="item item-text-wrap">
-               <ion-toggle ng-model="isOnline" ng-checked="item.checked">
-                 <h1 ng-show="isOnline">I'm Online</h1>
-                 <h1 ng-show="! isOnline">I'm offline</h1>
-               </ion-toggle>
-            </div>
             <div class="card" ng-controller="MyPing">
                 <div class="item item-text-wrap">
-                  <h1>Ping : {{pingStatus}} </h1>
-                  <h3>pingTarget : {{pingTarget}} </h3>
-                  <h3>Lost : {{pingpctLoss}} </h3>
+                  <h1 ng-model="pingStatus">Ping : {{pingStatus}} </h1>
+                  <h3 ng-model="pingTarget">pingTarget : {{pingTarget}} </h3>
+                  <h3 ng-model="pingpctLoss">Lost : {{pingpctLoss}} </h3>
                 </div>
             </div>
+          </div>
         </div>
-
       </ion-content>
     </ion-pane>
   </body>
-
-
-
 </html>

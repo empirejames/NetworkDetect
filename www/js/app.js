@@ -32,47 +32,53 @@ angular.module('starter', ['ionic','ngCordova'])
 })
 
 .controller('MyPing', function($scope) {
+
+ 
   $scope.data = {
     model: null,
     availableOptions: [
-      {id: '1', name: 'Option A'},
-      {id: '2', name: 'Option B'},
-      {id: '3', name: 'Option C'}
+      {id: '0', name: 'Europe'},
+      {id: '1', name: 'Asia'},
+      {id: '2', name: 'America'}
     ]
    };
-  document.addEventListener('deviceready', onDeviceReady, false);
-  function onDeviceReady() {
+   $scope.Preference = function(num) {        
     var p, success, err, ipList;
     ipList = [{
-                query: 'www.tiste.org',
+                query: '192.168.1.5',
                 timeout: 1,
                 retry: 3,
                 version:'v4'},
               {
-                query: 'www.somesite.com',
-                timeout: 2,
+                query: '8.8.8.8',
+                timeout: 1,
                 retry: 3,
-                version:'v6'
-                }];
+                version:'v4'
+                },{
+                  query: 'ptt.cc',
+                  timeout: 1,
+                  retry: 3,
+                  version:'v4'}];
+
     success = function (results) {
       console.log(results);
+     
       var str = JSON.stringify(results);
       var res = JSON.parse(str);
-      $scope.pingStatus = res[0].response.status;
-      $scope.pingTarget = res[0].response.result.target;
-      $scope.pingpctTransmitted = res[0].response.result.pctTransmitted;
-      $scope.pingpctReceived = res[0].response.result.pctReceived;
-      $scope.pingpctLoss = res[0].response.result.pctLoss;
+      $scope.pingStatus = res[num].response.status;
+      $scope.pingTarget = res[num].response.result.target;
+      $scope.pingpctTransmitted = res[num].response.result.pctTransmitted;
+      $scope.pingpctReceived = res[num].response.result.pctReceived;
+      $scope.pingpctLoss = res[num].response.result.pctLoss;
       $scope.$apply();
-      //alert(res[0].response.status);
-      //alert(res[0].response.result.target);
+      alert("Network Test :"+ res[num].response.status);
     };
     err = function (e) {
       console.log('Error: ' + e);
     };
     p = new Ping();
     p.ping(ipList, success, err);
-  }
+  };   
 })
 
 
