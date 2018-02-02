@@ -35,17 +35,18 @@
   </head>
   <body ng-app="starter" ng-controller="MyCtrl">
     <ion-pane>
-      <ion-header-bar class="bar-stable">
+      <ion-header-bar class="bar-positive">
         <h1 class="title">Ionic Blank Starter</h1>
       </ion-header-bar>
 
       <ion-content padding="true">
           <div ng-controller="MyPing">
               <form name="myForm">
-                <label for="repeatSelect"> 選擇站台 : </label>
+                <label for="repeatSelect" class = "item item-input item-select" item-calm> 選擇站台 : 
                 <select name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="Preference(data.model);showLoading();">
                   <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
                 </select>
+              </label>
               </form>
         <div class="card">
             <div class="item item-text-wrap">
