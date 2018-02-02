@@ -31,9 +31,12 @@ angular.module('starter', ['ionic','ngCordova'])
   }, false);
 })
 
-.controller('MyPing', function($scope) {
-
- 
+.controller('MyPing', function($scope, $ionicLoading) {
+  $scope.showLoading = function() {
+    $ionicLoading.show({
+       template: 'Loading...'
+    });
+ };
   $scope.data = {
     model: null,
     availableOptions: [
@@ -72,9 +75,11 @@ angular.module('starter', ['ionic','ngCordova'])
       $scope.pingpctLoss = res[num].response.result.pctLoss;
       $scope.$apply();
       alert("Network Test :"+ res[num].response.status);
+      $ionicLoading.hide();
     };
     err = function (e) {
       console.log('Error: ' + e);
+      $ionicLoading.hide();
     };
     p = new Ping();
     p.ping(ipList, success, err);

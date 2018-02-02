@@ -43,7 +43,7 @@
           <div ng-controller="MyPing">
               <form name="myForm">
                 <label for="repeatSelect"> 選擇站台 : </label>
-                <select name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="Preference(data.model)">
+                <select name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="Preference(data.model);showLoading();">
                   <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
                 </select>
               </form>
