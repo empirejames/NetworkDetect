@@ -36,34 +36,46 @@
   <body ng-app="starter" ng-controller="MyCtrl">
     <ion-pane>
       <ion-header-bar class="bar-positive">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title">Network Test Toolionic</h1>
       </ion-header-bar>
 
       <ion-content padding="true">
           <div ng-controller="MyPing">
               <form name="myForm">
-                <label for="repeatSelect" class = "item item-input item-select" item-calm> 選擇站台 : 
-                <select name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="Preference(data.model);showLoading();">
+                <label for="repeatSelect" class = "item item-input item-select item-calm" > 選擇站台 : 
+                <select name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="Preference(data.model);showLoading();" >
                   <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
                 </select>
               </label>
               </form>
-        <div class="card">
-            <div class="item item-text-wrap">
-                <h1>Network : {{network}}</h1>
-                <ion-toggle ng-model="isOnline" ng-checked="item.checked">
-                  </ion-toggle>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card" ng-controller="MyPing">
-                <div class="item item-text-wrap">
-                  <h1 ng-model="pingStatus">Ping : {{pingStatus}} </h1>
-                  <h3 ng-model="pingTarget">pingTarget : {{pingTarget}} </h3>
-                  <h3 ng-model="pingpctLoss">Lost : {{pingpctLoss}} </h3>
-                </div>
-            </div>
-          </div>
+              <ion-list>
+                  <ion-item-sliding >
+                    <ion-item>
+                        <div class="card" ng-controller="MyPing">
+                          <div class="item item-divider">
+                              <h1>Network : {{network}}</h1>
+                          </div>
+                          <div class="item">
+                                <ion-label>SSID : {{getCurrentSSID}}</ion-label>
+                                <ion-label>MAC : {{BSSID}}</ion-label>
+                                <ion-label>LEVEL : {{LEVEL}}</ion-label>
+                          </div>
+                        </div>
+                      <ion-card>
+                              <div class="card" ng-controller="MyPing">
+                                  <div class="item item-divider">
+                                      <h1 ng-model="pingStatus">Ping : {{pingStatus}} </h1>
+                                  </div>
+                                  <div class="item">
+                                      <ion-label ng-model="pingTarget">Source : {{pingTarget}} </ion-label>
+                                      <ion-label ng-model="pingAvgRtt">Avg Rtt : {{pingAvgRtt}} </ion-label>
+                                      <ion-label ng-model="pingpctLoss">Lost : {{pingpctLoss}} </ion-label>
+                                  </div>
+                              </div>
+                      </ion-card>
+                    </ion-item>
+                  </ion-item-sliding>
+                </ion-list>
         </div>
       </ion-content>
     </ion-pane>

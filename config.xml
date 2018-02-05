@@ -82,8 +82,9 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
-    <plugin name="cordova-plugin-networkinterface" spec="^1.2.0" />
     <plugin name="cordova-plugin-ping" spec="https://github.com/t1st3/cordova-plugin-ping.git" />
     <allow-navigation href="http://10.10.11.94:8100" />
+    <plugin name="cordova-plugin-networkinterface" spec="^1.2.0" />
+    <plugin name="com.pylonproducts.wifiwizard" spec="~0.2.11" />
     <engine name="android" spec="7.0.0" />
 </widget>

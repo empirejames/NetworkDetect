@@ -8,10 +8,36 @@ angular.module('starter', ['ionic','ngCordova'])
     document.addEventListener("deviceready", function () {
       var type = $cordovaNetwork.getNetwork();
       var isOnline = $cordovaNetwork.isOnline();
-
+      var result;
         $scope.network = type;
         $scope.isOnline = isOnline;
         $scope.$apply();
+        WifiWizard.getCurrentSSID(ssidHandler, fail);
+        WifiWizard.startScan(function() {
+          WifiWizard.getScanResults({}, function(s) {
+             
+              var str = JSON.stringify(s);
+              var res = JSON.parse(str);
+              $scope.LEVEL = res[0].level;
+              $scope.BSSID = res[0].BSSID;
+              $scope.$apply();
+
+          }, function(e) {
+            console.log("getScanResults error: "+e)
+          });
+      }, function(e) {
+        console.log("startScan error: "+e)
+      })
+
+     function ssidHandler(s) {
+          $scope.getCurrentSSID = s;
+          $scope.$apply();
+      }
+  
+      function fail(e) {
+          alert("Failed" + e);
+      }
+
         
         // listen for Online event
         $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
@@ -29,6 +55,7 @@ angular.module('starter', ['ionic','ngCordova'])
         })
  
   }, false);
+
 })
 
 .controller('MyPing', function($scope, $ionicLoading) {
@@ -70,11 +97,10 @@ angular.module('starter', ['ionic','ngCordova'])
       var res = JSON.parse(str);
       $scope.pingStatus = res[num].response.status;
       $scope.pingTarget = res[num].response.result.target;
-      $scope.pingpctTransmitted = res[num].response.result.pctTransmitted;
+      $scope.pingAvgRtt = res[num].response.result.avgRtt;
       $scope.pingpctReceived = res[num].response.result.pctReceived;
       $scope.pingpctLoss = res[num].response.result.pctLoss;
       $scope.$apply();
-      alert("Network Test :"+ res[num].response.status);
       $ionicLoading.hide();
     };
     err = function (e) {
