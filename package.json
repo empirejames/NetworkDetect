@@ -38,8 +38,8 @@
       "com.pylonproducts.wifiwizard": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }

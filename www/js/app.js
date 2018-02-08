@@ -69,23 +69,23 @@ angular.module('starter', ['ionic','ngCordova'])
     availableOptions: [
       {id: '0', name: 'Europe'},
       {id: '1', name: 'Asia'},
-      {id: '2', name: 'America'}
+      {id: '2', name: 'Google'}
     ]
    };
    $scope.Preference = function(num) {        
     var p, success, err, ipList;
     ipList = [{
-                query: '192.168.1.5',
+                query: 'europe.myluxhome.com',
                 timeout: 1,
                 retry: 3,
                 version:'v4'},
               {
-                query: '8.8.8.8',
+                query: 'asia.myluxhome.com',
                 timeout: 1,
                 retry: 3,
                 version:'v4'
                 },{
-                  query: 'ptt.cc',
+                  query: 'www.google.com',
                   timeout: 1,
                   retry: 3,
                   version:'v4'}];
