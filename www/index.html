@@ -31,6 +31,7 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/download.js"></script>
 
   </head>
   <body ng-app="starter" ng-controller="MyCtrl">
@@ -70,6 +71,7 @@
                                       <ion-label ng-model="pingTarget">Source : {{pingTarget}} </ion-label>
                                       <ion-label ng-model="pingAvgRtt">Avg Rtt: {{pingAvgRtt}} </ion-label>
                                       <ion-label ng-model="pingpctLoss">Lost : {{pingpctLoss}} </ion-label>
+                                      <p id="speedTest" style="color:rgb(55, 55, 55);"></p>
                                   </div>
                               </div>
                       </ion-card>

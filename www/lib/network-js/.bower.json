@@ -1,0 +1,41 @@
+{
+  "name": "network-js",
+  "version": "2.1.0",
+  "homepage": "https://github.com/nesk/network.js",
+  "authors": [
+    "Johann Pardanaud <pardanaud.j@gmail.com>"
+  ],
+  "description": "Make accurate network measures in JavaScript",
+  "main": "dist/network.min.js",
+  "moduleType": [
+    "es6",
+    "globals"
+  ],
+  "keywords": [
+    "network",
+    "speedtest",
+    "speed",
+    "test",
+    "latency",
+    "bandwidth",
+    "connection"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+    "test"
+  ],
+  "_release": "2.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.0",
+    "commit": "7fb937db2399d89d182eb49895831ffe8b43179f"
+  },
+  "_source": "https://github.com/nesk/network.js.git",
+  "_target": "^2.1.0",
+  "_originalSource": "network-js",
+  "_direct": true
+}

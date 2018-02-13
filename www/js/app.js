@@ -59,6 +59,23 @@ angular.module('starter', ['ionic','ngCordova'])
 })
 
 .controller('MyPing', function($scope, $ionicLoading) {
+  var ss;
+  var p, success, err, ipList;
+  ipList = [{
+              query: 'europe.myluxhome.com',
+              timeout: 1,
+              retry: 3,
+              version:'v4'},
+            {
+              query: 'asia.myluxhome.com',
+              timeout: 1,
+              retry: 3,
+              version:'v4'
+              },{
+                query: 'www.google.com',
+                timeout: 1,
+                retry: 3,
+                version:'v4'}];
   $scope.showLoading = function() {
     $ionicLoading.show({
        template: 'Loading...'
@@ -72,27 +89,12 @@ angular.module('starter', ['ionic','ngCordova'])
       {id: '2', name: 'Google'}
     ]
    };
-   $scope.Preference = function(num) {        
-    var p, success, err, ipList;
-    ipList = [{
-                query: 'europe.myluxhome.com',
-                timeout: 1,
-                retry: 3,
-                version:'v4'},
-              {
-                query: 'asia.myluxhome.com',
-                timeout: 1,
-                retry: 3,
-                version:'v4'
-                },{
-                  query: 'www.google.com',
-                  timeout: 1,
-                  retry: 3,
-                  version:'v4'}];
-
-    success = function (results) {
+   $scope.Preference = function(num) {
+      var hostList = ["europe","asia"];
+     ss = downloadFile(hostList[num]);
+      success = function (results) {
       console.log(results);
-     
+      
       var str = JSON.stringify(results);
       var res = JSON.parse(str);
       $scope.pingStatus = res[num].response.status;

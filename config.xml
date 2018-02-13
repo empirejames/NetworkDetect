@@ -86,6 +86,8 @@
     <plugin name="cordova-plugin-networkinterface" spec="^1.2.0" />
     <plugin name="cordova-plugin-ping" spec="git+https://github.com/t1st3/cordova-plugin-ping.git" />
     <plugin name="com.pylonproducts.wifiwizard" spec="~0.2.11" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="7.0.0" />
 </widget>
