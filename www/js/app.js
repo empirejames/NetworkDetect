@@ -114,6 +114,24 @@ angular.module('starter', ['ionic','ngCordova'])
   };   
 })
 
+.controller('MyVideo', function($scope) {
+  $scope.playVideo = function() {
+    var videoUrl = "http://es5.eversecured.net/xmpp-test/m3u8/vc703_2280.m3u8";
+    window.plugins.streamingMedia.playVideo(videoUrl);
+    var options = {
+      successCallback: function() {
+        console.log("Video was closed without error.");
+      },
+      errorCallback: function(errMsg) {
+        console.log("Error! " + errMsg);
+      },
+      //orientation: 'landscape'
+    };
+    //window.plugins.streamingMedia.playVideo(videoUrl, options);
+  }
+
+})
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
