@@ -26,10 +26,10 @@
                   //alert("文件保存位置: " + entry.toURL());
                   end_time = new Date().getTime();
                   var pass_time = (end_time - start_time)  /1000;
-                  result = 1024 / pass_time;
+                  result = 1024 / pass_time * 8;
                   var myEl =angular.element(document.querySelector( '#speedTest' ));
-                  myEl.text("Speed : " + Math.round(result) + " KB/s");
-                  return Math.round(result) + " KB/s";
+                  myEl.text("Speed : " + Math.round(result) + " Kb/s");
+                  return Math.round(result) + " Kb/s";
                 },
                 function (error) {
                   alert("下載失敗！" + station);

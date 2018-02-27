@@ -115,8 +115,20 @@ angular.module('starter', ['ionic','ngCordova'])
 })
 
 .controller('MyVideo', function($scope) {
+
+  $scope.data = {
+    model: null,
+    availableOptions: [
+      {id: '0', name: 'm3u8'},
+      {id: '1', name: 'mp4'}
+    ]
+   };
   $scope.playVideo = function() {
-    var videoUrl = "http://es5.eversecured.net/xmpp-test/m3u8/vc703_2280.m3u8";
+
+    var myEl =angular.element(document.querySelector( '#streams' ));
+    var hostList = ["http://es5.eversecured.net/xmpp-test/m3u8/vc703_2280.m3u8","http://es5.eversecured.net/mobile/video/output.mp4"];
+    var videoUrl = hostList[myEl.val()];
+    
     window.plugins.streamingMedia.playVideo(videoUrl);
     var options = {
       successCallback: function() {

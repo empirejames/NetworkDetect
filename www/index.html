@@ -44,10 +44,10 @@
           <div ng-controller="MyPing">
               <form name="myForm">
                 <label for="repeatSelect" class = "item item-input item-select item-calm" > 選擇站台 : 
-                <select name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="Preference(data.model);showLoading();" >
-                  <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
-                </select>
-              </label>
+                  <select name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="Preference(data.model);showLoading();" >
+                    <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                  </select>
+                </label>
               </form>
               <ion-list>
                   <ion-item-sliding >
@@ -79,7 +79,11 @@
                         
                           <div class="card" ng-controller="MyVideo">
                               <div class="item item-divider">
-                                  <h1>Video</h1>
+                                  <h1>Video : 
+                                  <select style="font-size:20px;" name="streams" id="streams"  ng-model="data.model">
+                                    <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                                  </select>
+                                </h1>
                               </div>
                               <div class="item">
                                   <div class="col text-center">
