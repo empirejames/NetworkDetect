@@ -72,10 +72,52 @@ angular.module('starter', ['ionic','ngCordova'])
               retry: 3,
               version:'v4'
               },{
+                query: 'eversecured.myluxhome.com',
+                timeout: 1,
+                retry: 3,
+                version:'v4'
+              },{
+                query: 'es1.eversecure.net',
+                timeout: 1,
+                retry: 3,
+                version:'v4'
+              },{
+                query: 'es2.eversecure.net',
+                timeout: 1,
+                retry: 3,
+                version:'v4'
+              },{
+                query: 'es3.eversecure.net',
+                timeout: 1,
+                retry: 3,
+                version:'v4'
+              },{
+                query: 'es4.eversecure.net',
+                timeout: 1,
+                retry: 3,
+                version:'v4'
+              },{
+                query: 'es5.eversecure.net',
+                timeout: 1,
+                retry: 3,
+                version:'v4'
+              },{
+                query: 'es6.eversecure.net',
+                timeout: 1,
+                retry: 3,
+                version:'v4'
+              },{
+                query: 'es7.eversecure.net',
+                timeout: 1,
+                retry: 3,
+                version:'v4'
+              },{
                 query: 'www.google.com',
                 timeout: 1,
                 retry: 3,
-                version:'v4'}];
+                version:'v4'
+              }
+                ];
   $scope.showLoading = function() {
     $ionicLoading.show({
        template: 'Loading...'
@@ -86,7 +128,15 @@ angular.module('starter', ['ionic','ngCordova'])
     availableOptions: [
       {id: '0', name: 'Europe'},
       {id: '1', name: 'Asia'},
-      {id: '2', name: 'Google'}
+      {id: '2', name: 'Eversecure'},
+      {id: '3', name: 'Es1'},
+      {id: '4', name: 'Es2'},
+      {id: '5', name: 'Es3'},
+      {id: '6', name: 'Es4'},
+      {id: '7', name: 'Es5'},
+      {id: '8', name: 'Es6'},
+      {id: '9', name: 'Es7'},
+      {id: '10', name: 'Google'}
     ]
    };
    $scope.Preference = function(num) {
@@ -126,8 +176,10 @@ angular.module('starter', ['ionic','ngCordova'])
   $scope.playVideo = function() {
 
     var myEl =angular.element(document.querySelector( '#streams' ));
-    var hostList = ["http://es5.eversecured.net/xmpp-test/m3u8/vc703_2280.m3u8","http://es5.eversecured.net/mobile/video/output.mp4"];
-    var videoUrl = hostList[myEl.val()];
+    var videoList = [
+      "http://es5.eversecured.net/xmpp-test/m3u8/vc703_2280.m3u8",
+    "http://es5.eversecured.net/mobile/video/output.mp4"];
+    var videoUrl = videoList[myEl.val()];
     
     window.plugins.streamingMedia.playVideo(videoUrl);
     var options = {
@@ -150,7 +202,7 @@ angular.module('starter', ['ionic','ngCordova'])
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
 
       // Don't remove this line unless you know what you are doing. It stops the viewport
       // from snapping when text inputs are focused. Ionic handles this internally for
