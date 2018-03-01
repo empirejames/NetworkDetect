@@ -1,0 +1,51 @@
+{
+  "_from": "git+https://github.com/t1st3/cordova-plugin-ping.git",
+  "_id": "cordova-plugin-ping@0.4.0",
+  "_inBundle": false,
+  "_location": "/cordova-plugin-ping",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/t1st3/cordova-plugin-ping.git",
+    "rawSpec": "https://github.com/t1st3/cordova-plugin-ping.git",
+    "saveSpec": "git+https://github.com/t1st3/cordova-plugin-ping.git",
+    "fetchSpec": "https://github.com/t1st3/cordova-plugin-ping.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/t1st3/cordova-plugin-ping.git#7dbb9c5eff1d96ac66fc3529b3c101cd48626941",
+  "_spec": "https://github.com/t1st3/cordova-plugin-ping.git",
+  "_where": "D:\\IonicProject\\NetworkInfo",
+  "author": {
+    "name": "t1st3"
+  },
+  "bugs": {
+    "url": "https://github.com/t1st3/cordova-plugin-ping/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-ping",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Ping Plugin",
+  "homepage": "https://github.com/t1st3/cordova-plugin-ping#readme",
+  "keywords": [
+    "cordova",
+    "ping",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-ping",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t1st3/cordova-plugin-ping.git"
+  },
+  "version": "0.4.0"
+}

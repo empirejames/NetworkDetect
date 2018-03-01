@@ -1,0 +1,57 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.hutchind.cordova.plugins.streamingmedia": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "com.pylonproducts.wifiwizard": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-headercolor": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-networkinterface": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-ping": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "cordova-wheel-selector-plugin": {
+      "PACKAGE_NAME": "com.james.network"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.james.network"
+    }
+  },
+  "dependent_plugins": {}
+}
